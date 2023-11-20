@@ -4,7 +4,16 @@ const bodyParser = require ("body-parser");
 const app = express();
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/index.html");
+    const today =new Date();
+    const current = today.getDay();
+    // res.sendFile(__dirname + "/index.html");
+
+    if(current === 2 || current === 0)
+    {
+        res.send("we are here lads");
+    }else{
+        res.send("we are here ladssssss");
+    }
 })
 
 app.listen(5000, function(){
