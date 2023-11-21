@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs'); // Corrected line
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
 
 app.get("/", function (req, res) {
     res.render("index", { name: "hussein" });
