@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="style.csss">
 </head>
 <body>
-    <div class="comment">
-        <h1><%= name %></h1>
-        <h2><%= occupation %></h2>
-        <p><%= comment %></p>
-    </div>
+    <% personData.forEach(function(person) { %>
+        <div class="comment">
+            <h1><%= person.names %></h1>
+            <h2><%= person.occupations %></h2>
+            <p><%= person.comments %></p>
+        </div>
+    <% }); %>
+    
     <form action="/" method="post">
         <input name="names" type="text" placeholder="whats your name">
         <input name="occupations" type="text" placeholder="whats your occupation">
