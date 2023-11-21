@@ -11,13 +11,24 @@ app.use(express.static(__dirname + '/public'));
 const personData = [];
 
 app.get("/", (req, res)=>{
-    res.render("index", { name: "hussein", occupation:"hello", comment:"live" });
-});
+    if(personData.length>0){
+        res.render("index",{ 
+            username : personData[0].username, 
+            occupation: personData[0].occupation,
+            comment :personData[0].comment
+        });
 
-app.post("/",()=>{
+}else{ res.render("index", { 
+    username: "", 
+    occupation:"", 
+    comment:"" });
+}});
+
+app.post("/",(req,res)=>{
     const bodyData = req.body;
+    console.log(req.body);
     personData.push(bodyData);
-    res.render('/');
+    res.redirect("/");
 });
 
 const port = 5000;

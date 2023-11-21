@@ -7,11 +7,13 @@
 </head>
 <body>
     <section class="section">
-        <div class="comments">
-            <h1><%= name %></h1>
-            <h2><%= occupation %></h2>
-            <p><strong>"</strong><%= comment %><strong>"</strong></p>
-        </div>
+        <% personData.forEach(function(person) { %>
+            <div class="comment">
+                <h1><%= person.username %></h1>
+                <h2><%= person.occupation %></h2>
+                <p><%= person.comments %></p>
+            </div>
+        <% }); %>        
         <div class="input-files">
             <form action="/" method="post">
                 <input type="text" name="username" placeholder="input username">
