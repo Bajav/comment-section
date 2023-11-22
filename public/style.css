@@ -18,13 +18,14 @@ input
     border-left: none;
     border-right: none;
 }
-.comments
+.comment
 {
     background: #3DB8D9;
     padding: 30px;
     border-radius: 10px;
     color: #fff;
     text-transform: capitalize;
+    margin: 1em;
 }
 .input-files form
 {

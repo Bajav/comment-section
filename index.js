@@ -12,16 +12,9 @@ const personData = [];
 
 app.get("/", (req, res)=>{
     if(personData.length>0){
-        res.render("index",{ 
-            username : personData[0].username, 
-            occupation: personData[0].occupation,
-            comment :personData[0].comment
-        });
-
-}else{ res.render("index", { 
-    username: "", 
-    occupation:"", 
-    comment:"" });
+        res.render("index", { personData: personData });
+}else{
+    res.render("index", { personData: [] });
 }});
 
 app.post("/",(req,res)=>{
